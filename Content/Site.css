@@ -1,0 +1,15 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+
+.hdngImg {
+    background-image: url('https://images.pexels.com/photos/1694363/pexels-photo-1694363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    min-height: 100%;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
