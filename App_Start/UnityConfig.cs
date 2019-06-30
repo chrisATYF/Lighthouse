@@ -1,6 +1,13 @@
+using Lighthouse.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 using System;
-
+using System.Data.Entity;
+using System.Web;
 using Unity;
+using Unity.AspNet.Mvc;
+using Unity.Injection;
 
 namespace Lighthouse
 {
@@ -42,6 +49,13 @@ namespace Lighthouse
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
+
+            container
+                .RegisterType<DbContext, ApplicationDbContext>(new PerRequestLifetimeManager())
+                .RegisterType<ApplicationDbContext>(new PerRequestLifetimeManager())
+                .RegisterType<UserManager<ApplicationUser>>(new PerRequestLifetimeManager())
+                .RegisterType<IAuthenticationManager>(new InjectionFactory(c => HttpContext.Current.GetOwinContext().Authentication))
+                .RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new PerRequestLifetimeManager());
         }
     }
 }
