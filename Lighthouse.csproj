@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Humanizer, Version=2.6.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>packages\Humanizer.Core.2.6.2\lib\netstandard2.0\Humanizer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -202,7 +205,19 @@
     <Compile Include="Migrations\201907042104480_InitialMigration.Designer.cs">
       <DependentUpon>201907042104480_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907042154250_AddingMessages.cs" />
+    <Compile Include="Migrations\201907042154250_AddingMessages.Designer.cs">
+      <DependentUpon>201907042154250_AddingMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907042204527_AddingPrayerRequests.cs" />
+    <Compile Include="Migrations\201907042204527_AddingPrayerRequests.Designer.cs">
+      <DependentUpon>201907042204527_AddingPrayerRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\PrayerRequest.cs" />
+    <Compile Include="Services\EFMessageService.cs" />
+    <Compile Include="Services\Interfaces\IMessage.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
@@ -309,7 +324,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -323,6 +337,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201907042104480_InitialMigration.resx">
       <DependentUpon>201907042104480_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907042154250_AddingMessages.resx">
+      <DependentUpon>201907042154250_AddingMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907042204527_AddingPrayerRequests.resx">
+      <DependentUpon>201907042204527_AddingPrayerRequests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

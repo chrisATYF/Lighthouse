@@ -1,4 +1,6 @@
 using Lighthouse.Models;
+using Lighthouse.Services;
+using Lighthouse.Services.Interfaces;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
@@ -55,7 +57,8 @@ namespace Lighthouse
                 .RegisterType<ApplicationDbContext>(new PerRequestLifetimeManager())
                 .RegisterType<UserManager<ApplicationUser>>(new PerRequestLifetimeManager())
                 .RegisterType<IAuthenticationManager>(new InjectionFactory(c => HttpContext.Current.GetOwinContext().Authentication))
-                .RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new PerRequestLifetimeManager());
+                .RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new PerRequestLifetimeManager())
+                .RegisterType<IMessage, EFMessageService>(); 
         }
     }
 }

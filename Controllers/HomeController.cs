@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Lighthouse.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -9,6 +11,13 @@ namespace Lighthouse.Controllers
     [RoutePrefix("Home")]
     public class HomeController : Controller
     {
+        protected readonly IMessage _efMessageService;
+
+        public HomeController(IMessage efMessageService)
+        {
+            _efMessageService = efMessageService;
+        }
+
         [Route("", Name = "HomeIndex")]
         public ActionResult Index()
         {
@@ -27,9 +36,11 @@ namespace Lighthouse.Controllers
         }
 
         [Route("Start", Name = "HomeStart")]
-        public ActionResult Start()
+        public async Task<ActionResult> Start()
         {
-            return View();
+            var model = await _efMessageService.GetAllMessageAsync();
+
+            return View(model);
         }
     }
 }

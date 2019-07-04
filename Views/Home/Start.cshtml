@@ -1,10 +1,14 @@
-﻿
+﻿@model IEnumerable<Lighthouse.Models.Message>
 @{
     ViewBag.Title = "Start";
 }
 
 @Html.Partial("_NavLayout")
 
-<div class="">
-    <p>This is the start up page</p>
-</div>
+    <div class="">
+        <p>This is the start up page</p>
+        @foreach (var message in Model)
+        {
+            <p>@message.MessageDetails <span>@message.DateSubmittedHumanized</span></p>
+        }
+    </div>

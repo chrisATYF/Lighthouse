@@ -6,7 +6,6 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Lighthouse.Models
 {
-    // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -27,6 +26,9 @@ namespace Lighthouse.Models
             : base("LightHouseDb", throwIfV1Schema: false)
         {
         }
+
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<PrayerRequest> PrayerRequests { get; set; }
 
         public static ApplicationDbContext Create()
         {
