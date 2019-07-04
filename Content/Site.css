@@ -17,7 +17,12 @@ html {
     min-height: 100%;
 }
 
-.hdngImg {
+.mssnImg {
+    background-image: url('https://images.pexels.com/photos/722664/pexels-photo-722664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    min-height: 50%;
+}
+
+.hdngImg, .mssnImg {
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,27 +31,31 @@ html {
 }
 
 .hdngSect {
-    background-color: #dedede;
-    color: #363636;
+    background-color: #000000;
+    color: #dedede;
     border-radius: 10px 10px;
     padding: 65px;
     margin: auto;
     width: 65%;
-    opacity: 0.55;
+    background: rgba(24, 24, 24, 0.8);
     transform: translate(0, -50%)
 }
 
-a {
-    padding: 5px;
-    text-decoration: none !important;
+.mssnSect {
+    text-align: center;
+    padding: 50px 80px;
+    background-color: #efefef;
     color: #363636;
-    border-radius: 5px 5px;
 }
 
-    a:hover {
-        background-color: #363636;
-        color: #dedede;
-    }
+nav {
+    background-color: rgba(24, 24, 24, 0.8) !important;
+    color: #dedede !important;
+}
+a {
+    text-decoration: none !important;
+    color: #dedede !important;
+}
 
 .sText {
     position: absolute;
@@ -60,7 +69,7 @@ a {
 }
 
 .ftSect {
-    background-color: #000000;
+    background-color: rgba(24, 24, 24, 0.8);
     color: #dedede;
     text-align: center;
     bottom: 0;
@@ -70,5 +79,40 @@ a {
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 500px;
+}
+
+.loginHeading {
+    padding: 50px 0 20px 30px;
+    text-align: center;
+    width: 50%;
+    font-size: 25px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #5bc0de;
+}
+
+.loginSect {
+    color: #5bc0de;
+    padding: 10px 0 10px 0;
+    border-radius: 10px 10px;
+    width: 50%;
+    margin-left: 30px;
+}
+
+.loginBtn {
+    margin-left: 30px;
+    padding: 10px;
+}
+
+@media (max-width: 537px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .hdngImg, .mssnImg {
+        font-size: 17px;
+        letter-spacing: 3px;
+        background-attachment: scroll;
+    }
 }

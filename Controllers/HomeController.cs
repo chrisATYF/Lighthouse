@@ -14,9 +14,21 @@ namespace Lighthouse.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToRoute("");
+                return RedirectToRoute("HomeStart");
             }
 
+            return View();
+        }
+
+        [Route("Mission", Name = "HomeMission")]
+        public ActionResult Mission()
+        {
+            return View();
+        }
+
+        [Route("Start", Name = "HomeStart")]
+        public ActionResult Start()
+        {
             return View();
         }
     }
