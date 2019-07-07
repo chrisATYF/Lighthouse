@@ -43,6 +43,7 @@ namespace Lighthouse
         /// allows resolving a concrete type even if it was not previously
         /// registered.
         /// </remarks>
+        [Obsolete]
         public static void RegisterTypes(IUnityContainer container)
         {
             // NOTE: To load from web.config uncomment the line below.
@@ -58,7 +59,8 @@ namespace Lighthouse
                 .RegisterType<UserManager<ApplicationUser>>(new PerRequestLifetimeManager())
                 .RegisterType<IAuthenticationManager>(new InjectionFactory(c => HttpContext.Current.GetOwinContext().Authentication))
                 .RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new PerRequestLifetimeManager())
-                .RegisterType<IMessage, EFMessageService>(); 
+                .RegisterType<IMessage, EFMessageService>()
+                .RegisterType<IPrayer, EFPrayerService>(); 
         }
     }
 }

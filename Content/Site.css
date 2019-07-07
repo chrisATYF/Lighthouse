@@ -17,12 +17,12 @@ html {
     min-height: 100%;
 }
 
-.mssnImg {
+.missionImg {
     background-image: url('https://images.pexels.com/photos/722664/pexels-photo-722664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
     min-height: 50%;
 }
 
-.hdngImg, .mssnImg {
+.hdngImg, .missionImg {
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,7 +41,7 @@ html {
     transform: translate(0, -50%)
 }
 
-.mssnSect {
+.missionSect {
     text-align: center;
     padding: 50px 80px;
     background-color: #efefef;
@@ -66,6 +66,13 @@ a {
     font-size: 27px;
     letter-spacing: 6px;
     text-transform: uppercase;
+}
+
+.mssgText {
+    width: 100%;
+    color: #363636;
+    text-align: center;
+    font-size: 15px;
 }
 
 .ftSect {
@@ -103,6 +110,39 @@ textarea {
 .loginBtn {
     margin-left: 30px;
     padding: 10px;
+}
+
+.mssgSect{
+    list-style-type: none;
+    text-align: center;
+    padding: 40px;
+}
+
+.prayerSect {
+    list-style-type: none;
+    text-align: center;
+    padding: 40px;
+}
+
+.mssgForm {
+    text-align: center;
+}
+
+.mssgSubmitBtn {
+    -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+}
+
+.mssgTA {
+    margin: 10px;
+    resize: none;
+    min-height: 150px;
+    min-width: 65%;
+    border-radius: 10px 10px;
+    -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
 }
 
 @media (max-width: 537px) {

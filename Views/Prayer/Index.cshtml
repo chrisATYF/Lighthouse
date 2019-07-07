@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Lighthouse.Models.PrayerRequest>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="prayerSect">
+    @foreach (var prayers in Model)
+    {
+        <p>@prayers.RequestDetails <span>@prayers.DateSubmittedHumanized</span></p>
+    }
+</div>

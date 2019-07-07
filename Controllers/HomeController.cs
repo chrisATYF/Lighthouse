@@ -1,4 +1,6 @@
-﻿using Lighthouse.Services.Interfaces;
+﻿using Lighthouse.Models;
+using Lighthouse.Services.Interfaces;
+using Lighthouse.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +14,12 @@ namespace Lighthouse.Controllers
     public class HomeController : Controller
     {
         protected readonly IMessage _efMessageService;
+        protected readonly IPrayer _efPrayerService;
 
-        public HomeController(IMessage efMessageService)
+        public HomeController(IMessage efMessageService, IPrayer efPrayerService)
         {
             _efMessageService = efMessageService;
+            _efPrayerService = efPrayerService;
         }
 
         [Route("", Name = "HomeIndex")]
@@ -38,9 +42,23 @@ namespace Lighthouse.Controllers
         [Route("Start", Name = "HomeStart")]
         public async Task<ActionResult> Start()
         {
-            var model = await _efMessageService.GetAllMessageAsync();
+            var mssgModel = await _efMessageService.GetAllMessageAsync();
+            var prayerModel = await _efPrayerService.GetAllPrayersAsync();
+            var model = new MessagePrayerViewModel { Messages = mssgModel, Prayers = prayerModel };
 
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("Start", Name = "HomeStartPost")]
+        public async Task<ActionResult> Start(Message model)
+        {
+            model.Name = User.Identity.Name;
+            model.DateSubmitted = DateTime.UtcNow;
+            await _efMessageService.AddMessageAsync(model);
+
+            return RedirectToRoute("HomeStart");
         }
     }
 }

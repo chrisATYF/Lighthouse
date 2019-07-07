@@ -1,14 +1,33 @@
-﻿@model IEnumerable<Lighthouse.Models.Message>
+﻿@model Lighthouse.ViewModels.MessagePrayerViewModel
 @{
     ViewBag.Title = "Start";
 }
 
 @Html.Partial("_NavLayout")
 
-    <div class="">
-        <p>This is the start up page</p>
-        @foreach (var message in Model)
+<div class="mssgForm">
+    <form action="@Url.RouteUrl("HomeStartPost")" method="post">
+        @Html.AntiForgeryToken()
+        <textarea class="mssgTA" name="MessageDetails"></textarea>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-outline-info mssgSubmitBtn" type="submit">Post</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="mssgText">
+    <ul class="mssgSect">
+        @foreach (var message in Model.Messages.OrderByDescending(d => d.DateSubmitted))
         {
-            <p>@message.MessageDetails <span>@message.DateSubmittedHumanized</span></p>
+        <li class="media pt-2">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">@message.Name User name goes here</h5>
+                @message.MessageDetails
+                <small class="d-block">@message.DateSubmittedHumanized</small>
+                <hr />
+            </div>
+        </li>
         }
-    </div>
+    </ul>
+</div>

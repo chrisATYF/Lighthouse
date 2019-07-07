@@ -7,12 +7,8 @@ using System.Web;
 
 namespace Lighthouse.Services.Interfaces
 {
-    public interface IMessage
+    public interface IPrayer
     {
-        Task<List<Message>> GetAllMessageAsync();
         Task<List<PrayerRequest>> GetAllPrayersAsync();
-        Task<Message> AddMessageAsync(Message model);
-        Task<Message> EditMessageAsync(Message model);
-        Task DeleteMessage(Message model);
     }
 }
