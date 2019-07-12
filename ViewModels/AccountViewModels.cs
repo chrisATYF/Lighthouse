@@ -65,6 +65,10 @@ namespace Lighthouse.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Display Name")]
+        public string DispayName { get; set; }
+
+        [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 

@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201907070045230_AddingNameToMessages.Designer.cs">
       <DependentUpon>201907070045230_AddingNameToMessages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907072138335_AddingDisplayName.cs" />
+    <Compile Include="Migrations\201907072138335_AddingDisplayName.Designer.cs">
+      <DependentUpon>201907072138335_AddingDisplayName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\PrayerRequest.cs" />
@@ -355,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907070045230_AddingNameToMessages.resx">
       <DependentUpon>201907070045230_AddingNameToMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907072138335_AddingDisplayName.resx">
+      <DependentUpon>201907072138335_AddingDisplayName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

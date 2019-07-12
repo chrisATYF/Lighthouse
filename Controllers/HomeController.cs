@@ -1,6 +1,7 @@
 ﻿using Lighthouse.Models;
 using Lighthouse.Services.Interfaces;
 using Lighthouse.ViewModels;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,7 +55,7 @@ namespace Lighthouse.Controllers
         [Route("Start", Name = "HomeStartPost")]
         public async Task<ActionResult> Start(Message model)
         {
-            model.Name = User.Identity.Name;
+            model.AspNetUserId = User.Identity.GetUserId();
             model.DateSubmitted = DateTime.UtcNow;
             await _efMessageService.AddMessageAsync(model);
 

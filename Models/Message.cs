@@ -10,6 +10,7 @@ namespace Lighthouse.Models
     public class Message
     {
         public int Id { get; set; }
+        public string AspNetUserId { get; set; }
         public string MessageDetails { get; set; }
         public string Name { get; set; }
         public DateTime DateSubmitted { get; set; }
