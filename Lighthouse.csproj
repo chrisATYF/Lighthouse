@@ -226,6 +226,18 @@
     <Compile Include="Migrations\201907122245440_AddingDisplayNames.Designer.cs">
       <DependentUpon>201907122245440_AddingDisplayNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907142115227_AddingAppUserToMessagesAndRequests.cs" />
+    <Compile Include="Migrations\201907142115227_AddingAppUserToMessagesAndRequests.Designer.cs">
+      <DependentUpon>201907142115227_AddingAppUserToMessagesAndRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907142124371_RemovedAppUserIdToMessagesAndRequests.cs" />
+    <Compile Include="Migrations\201907142124371_RemovedAppUserIdToMessagesAndRequests.Designer.cs">
+      <DependentUpon>201907142124371_RemovedAppUserIdToMessagesAndRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907142134216_RemovedNameFromMessagesAndRequests.cs" />
+    <Compile Include="Migrations\201907142134216_RemovedNameFromMessagesAndRequests.Designer.cs">
+      <DependentUpon>201907142134216_RemovedNameFromMessagesAndRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\PrayerRequest.cs" />
@@ -338,6 +350,7 @@
     <Content Include="Views\Shared\_NavLayout.cshtml" />
     <Content Include="Views\Home\Start.cshtml" />
     <Content Include="Views\Prayer\Index.cshtml" />
+    <Content Include="Views\Prayer\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -369,6 +382,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907122245440_AddingDisplayNames.resx">
       <DependentUpon>201907122245440_AddingDisplayNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907142115227_AddingAppUserToMessagesAndRequests.resx">
+      <DependentUpon>201907142115227_AddingAppUserToMessagesAndRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907142124371_RemovedAppUserIdToMessagesAndRequests.resx">
+      <DependentUpon>201907142124371_RemovedAppUserIdToMessagesAndRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907142134216_RemovedNameFromMessagesAndRequests.resx">
+      <DependentUpon>201907142134216_RemovedNameFromMessagesAndRequests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

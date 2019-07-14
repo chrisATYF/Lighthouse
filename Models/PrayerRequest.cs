@@ -10,6 +10,7 @@ namespace Lighthouse.Models
     public class PrayerRequest
     {
         public int Id { get; set; }
+        public ApplicationUser AppUser { get; set; }
         public string RequestDetails { get; set; }
         public DateTime DateSubmitted { get; set; }
 

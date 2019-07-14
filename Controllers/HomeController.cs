@@ -55,7 +55,9 @@ namespace Lighthouse.Controllers
         [Route("Start", Name = "HomeStartPost")]
         public async Task<ActionResult> Start(Message model)
         {
-            model.AspNetUserId = User.Identity.GetUserId();
+            var userAspNetId = User.Identity.GetUserId();
+            var appUser = await _efMessageService.GetApplicationUserAsync(userAspNetId);
+            model.AppUser = appUser;
             model.DateSubmitted = DateTime.UtcNow;
             await _efMessageService.AddMessageAsync(model);
 

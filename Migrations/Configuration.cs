@@ -15,21 +15,21 @@ namespace Lighthouse.Migrations
 
         protected override void Seed(ApplicationDbContext context)
         {
-            context.Messages.AddOrUpdate(i => i.Id,
-                new Message
-                {
-                    Id = 1,
-                    MessageDetails = "This is the first message",
-                    DateSubmitted = DateTime.UtcNow
-                });
+            //context.Messages.AddOrUpdate(i => i.Id,
+            //    new Message
+            //    {
+            //        Id = 1,
+            //        MessageDetails = "This is the first message",
+            //        DateSubmitted = DateTime.UtcNow
+            //    });
 
-            context.PrayerRequests.AddOrUpdate(i => i.Id,
-                new PrayerRequest
-                {
-                    Id = 1,
-                    RequestDetails = "This is a prayer request",
-                    DateSubmitted = DateTime.UtcNow
-                });
+            //context.PrayerRequests.AddOrUpdate(i => i.Id,
+            //    new PrayerRequest
+            //    {
+            //        Id = 1,
+            //        RequestDetails = "This is a prayer request",
+            //        DateSubmitted = DateTime.UtcNow
+            //    });
         }
     }
 }

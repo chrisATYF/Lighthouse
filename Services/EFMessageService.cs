@@ -19,7 +19,9 @@ namespace Lighthouse.Services
 
         public async Task<List<Message>> GetAllMessageAsync()
         {
-            return await _context.Messages.ToListAsync();
+            return await _context.Messages
+                .Include(a => a.AppUser)
+                .ToListAsync();
         }
         
         public async Task<Message> AddMessageAsync(Message model)
@@ -48,6 +50,11 @@ namespace Lighthouse.Services
         public async Task<List<PrayerRequest>> GetAllPrayersAsync()
         {
             return await _context.PrayerRequests.ToListAsync();
+        }
+
+        public async Task<ApplicationUser> GetApplicationUserAsync(string aspNetUserId)
+        {
+            return await _context.Users.FirstOrDefaultAsync(a => a.Id == aspNetUserId);
         }
     }
 }

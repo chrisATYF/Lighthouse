@@ -3,9 +3,19 @@
     ViewBag.Title = "Index";
 }
 
+<div class="row">
+    <div class="col-md-3">
+        <a href="@Url.RouteUrl("PrayerAddPrayer")" class="btn btn-outline-info">Add a prayer request</a>
+    </div>
+</div>
 <div class="prayerSect">
+    @if (!Model.Any())
+    {
+        <p>There are no requests here yet. You can submit a prayer request <a href="@Url.RouteUrl("PrayerAddPrayer")">here</a></p>
+    }
     @foreach (var prayers in Model)
     {
+        <h5>@prayers.AppUser.FirstName @prayers.AppUser.LastName</h5>
         <p>@prayers.RequestDetails <span>@prayers.DateSubmittedHumanized</span></p>
     }
 </div>

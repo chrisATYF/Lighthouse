@@ -14,5 +14,6 @@ namespace Lighthouse.Services.Interfaces
         Task<Message> AddMessageAsync(Message model);
         Task<Message> EditMessageAsync(Message model);
         Task DeleteMessage(Message model);
+        Task<ApplicationUser> GetApplicationUserAsync(string aspNetUserId);
     }
 }

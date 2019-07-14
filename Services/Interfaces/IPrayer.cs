@@ -10,5 +10,7 @@ namespace Lighthouse.Services.Interfaces
     public interface IPrayer
     {
         Task<List<PrayerRequest>> GetAllPrayersAsync();
+        Task<PrayerRequest> AddPrayersAsync(PrayerRequest model);
+        Task<ApplicationUser> GetApplicationUserAsync(string aspNetUserId);
     }
 }

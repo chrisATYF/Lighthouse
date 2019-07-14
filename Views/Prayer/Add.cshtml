@@ -1,0 +1,22 @@
+﻿@model Lighthouse.Models.PrayerRequest
+@{
+    ViewBag.Title = "Add";
+}
+
+<div class="row">
+    <div class="col-md-12 text-center mt-1 p-2">
+        <p>Request Prayer</p>
+    </div>
+</div>
+<div class="mssgForm">
+    <form action="@Url.RouteUrl("PrayerAddPrayerPost")" method="post">
+        @Html.HiddenFor(i => i.Id)
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-md-12">
+                @Html.TextAreaFor(r => r.RequestDetails, new { @class = "mssgTA" })
+            </div>
+        </div>
+        <button class="btn btn-outline-info mssgSubmitBtn mb-4" type="submit">Request Prayer</button>
+    </form>
+</div>

@@ -5,6 +5,11 @@
 
 @Html.Partial("_NavLayout")
 
+<div class="row">
+    <div class="col-md-3">
+        <a href="@Url.RouteUrl("PrayerIndex")" class="btn btn-outline-info">Prayer Requests</a>
+    </div>
+</div>
 <div class="mssgForm">
     <form action="@Url.RouteUrl("HomeStartPost")" method="post">
         @Html.AntiForgeryToken()
@@ -20,14 +25,14 @@
     <ul class="mssgSect">
         @foreach (var message in Model.Messages.OrderByDescending(d => d.DateSubmitted))
         {
-        <li class="media pt-2">
-            <div class="media-body">
-                <h5 class="mt-0 mb-1">User name goes here</h5>
-                @message.MessageDetails
-                <small class="d-block">@message.DateSubmittedHumanized</small>
-                <hr />
-            </div>
-        </li>
+            <li class="media pt-2">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1">@message.AppUser.FirstName @message.AppUser.LastName</h5>
+                    @message.MessageDetails
+                    <small class="d-block">@message.DateSubmittedHumanized</small>
+                    <hr />
+                </div>
+            </li>
         }
     </ul>
 </div>
