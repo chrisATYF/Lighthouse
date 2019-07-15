@@ -68,11 +68,47 @@ a {
     text-transform: uppercase;
 }
 
+.mssg {
+    -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    border-radius: 10px 10px;
+    padding: 10px;
+    margin: 5px auto 5px auto;
+}
+
 .mssgText {
-    width: 100%;
-    color: #363636;
+    width: 70%;
+    margin: 5px auto 5px auto;
     text-align: center;
     font-size: 15px;
+}
+
+.mssgSect {
+    list-style-type: none;
+    text-align: center;
+    padding: 40px;
+}
+
+.mssgForm {
+    text-align: center;
+}
+
+.mssgSubmitBtn {
+    -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+}
+
+.mssgTA {
+    margin: 10px;
+    resize: none;
+    min-height: 85px;
+    min-width: 55%;
+    border-radius: 10px 10px;
+    -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
 }
 
 .ftSect {
@@ -112,37 +148,10 @@ textarea {
     padding: 10px;
 }
 
-.mssgSect{
-    list-style-type: none;
-    text-align: center;
-    padding: 40px;
-}
-
 .prayerSect {
     list-style-type: none;
     text-align: center;
     padding: 40px;
-}
-
-.mssgForm {
-    text-align: center;
-}
-
-.mssgSubmitBtn {
-    -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
-    -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
-    box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
-}
-
-.mssgTA {
-    margin: 10px;
-    resize: none;
-    min-height: 150px;
-    min-width: 65%;
-    border-radius: 10px 10px;
-    -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
-    -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
-    box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
 }
 
 @media (max-width: 537px) {

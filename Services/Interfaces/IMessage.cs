@@ -10,7 +10,7 @@ namespace Lighthouse.Services.Interfaces
     public interface IMessage
     {
         Task<List<Message>> GetAllMessageAsync();
-        Task<List<PrayerRequest>> GetAllPrayersAsync();
+        Task<Message> GetMessageAsync(int messageId);
         Task<Message> AddMessageAsync(Message model);
         Task<Message> EditMessageAsync(Message model);
         Task DeleteMessage(Message model);

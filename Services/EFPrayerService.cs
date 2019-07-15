@@ -25,12 +25,36 @@ namespace Lighthouse.Services
                 .ToListAsync();
         }
 
+        public async Task<PrayerRequest> GetPrayerAsync(int prayerId)
+        {
+            return await _context.PrayerRequests
+                .Include(a => a.AppUser)
+                .FirstOrDefaultAsync(i => i.Id == prayerId);
+        }
+
         public async Task<PrayerRequest> AddPrayersAsync(PrayerRequest model)
         {
             _context.PrayerRequests.Add(model);
             await _context.SaveChangesAsync();
 
             return model;
+        }
+
+        public async Task<PrayerRequest> EditPrayerAsync(PrayerRequest model)
+        {
+            var modelEdit = await _context.PrayerRequests.FirstOrDefaultAsync(i => i.Id == model.Id);
+            modelEdit.RequestDetails = model.RequestDetails;
+            modelEdit.DateSubmitted = model.DateSubmitted;
+
+            await _context.SaveChangesAsync();
+
+            return model;
+        }
+
+        public async Task DeletePrayerAsync(PrayerRequest model)
+        {
+            _context.PrayerRequests.Remove(model);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<ApplicationUser> GetApplicationUserAsync(string aspNetUserId)
