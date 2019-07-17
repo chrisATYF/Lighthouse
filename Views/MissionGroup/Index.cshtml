@@ -14,7 +14,7 @@
     {
         foreach (var group in Model)
         {
-            <p>@group.GroupName @group.Country</p>
+            <a href="@Url.RouteUrl("MissionGroup", new { groupId = group.Id })">@group.GroupName</a><p>@group.Country</p>
             <span>@group.DateCreatedHumanized</span>
         }
     }

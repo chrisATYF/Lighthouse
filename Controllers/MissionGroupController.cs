@@ -27,6 +27,14 @@ namespace Lighthouse.Controllers
             return View(model);
         }
 
+        [Route("Group/{groupId}", Name = "MissionGroup")]
+        public async Task<ActionResult> Group(int groupId)
+        {
+            var model = await _efMissionService.GetGroupAsync(groupId);
+
+            return View(model);
+        }
+
         [Route("Add", Name = "MissionAdd")]
         public ActionResult Add()
         {

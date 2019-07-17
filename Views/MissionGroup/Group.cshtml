@@ -1,0 +1,9 @@
+﻿@model Lighthouse.Models.MissionGroup
+@{
+    ViewBag.Title = "Group";
+}
+
+@Html.Partial("_NavLayout")
+<h5>@Model.GroupName</h5>
+<p>@Model.Country</p>
+<span>@Model.DateCreatedHumanized</span>

@@ -57,7 +57,8 @@ nav {
 
 a {
     text-decoration: none !important;
-    color: #fbfbfb !important;
+    color: #3e3e3e !important;
+    cursor: pointer;
 }
 
 .sText {
