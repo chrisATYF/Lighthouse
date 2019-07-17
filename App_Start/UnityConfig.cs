@@ -60,7 +60,8 @@ namespace Lighthouse
                 .RegisterType<IAuthenticationManager>(new InjectionFactory(c => HttpContext.Current.GetOwinContext().Authentication))
                 .RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new PerRequestLifetimeManager())
                 .RegisterType<IMessage, EFMessageService>()
-                .RegisterType<IPrayer, EFPrayerService>(); 
+                .RegisterType<IPrayer, EFPrayerService>()
+                .RegisterType<IMissionGroup, EFMissionGroupService>(); 
         }
     }
 }

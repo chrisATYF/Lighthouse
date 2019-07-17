@@ -39,6 +39,11 @@ namespace Lighthouse.Controllers
         [Route("Add", Name = "PrayerAddPrayerPost")]
         public async Task<ActionResult> Add(PrayerRequest model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             var userAspNetId = User.Identity.GetUserId();
             var appModel = await _efPrayerService.GetApplicationUserAsync(userAspNetId);
             model.AppUser = appModel;

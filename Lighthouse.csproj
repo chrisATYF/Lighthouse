@@ -90,8 +90,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -198,7 +198,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MissionGroupController.cs" />
     <Compile Include="Controllers\PrayerController.cs" />
+    <Compile Include="Enums\Countries.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,19 +240,30 @@
     <Compile Include="Migrations\201907142134216_RemovedNameFromMessagesAndRequests.Designer.cs">
       <DependentUpon>201907142134216_RemovedNameFromMessagesAndRequests.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907162346460_AddingMissionGroups.cs" />
+    <Compile Include="Migrations\201907162346460_AddingMissionGroups.Designer.cs">
+      <DependentUpon>201907162346460_AddingMissionGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907170117201_AddingCountriesToMissionGroups.cs" />
+    <Compile Include="Migrations\201907170117201_AddingCountriesToMissionGroups.Designer.cs">
+      <DependentUpon>201907170117201_AddingCountriesToMissionGroups.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\MissionGroup.cs" />
     <Compile Include="Models\PrayerRequest.cs" />
     <Compile Include="Services\EFMessageService.cs" />
+    <Compile Include="Services\EFMissionGroupService.cs" />
     <Compile Include="Services\EFPrayerService.cs" />
     <Compile Include="Services\Interfaces\IMessage.cs" />
+    <Compile Include="Services\Interfaces\IMissionGroup.cs" />
     <Compile Include="Services\Interfaces\IPrayer.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\MessagePrayerViewModel.cs" />
+    <Compile Include="ViewModels\MessageMissionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -351,6 +364,8 @@
     <Content Include="Views\Home\Start.cshtml" />
     <Content Include="Views\Prayer\Index.cshtml" />
     <Content Include="Views\Prayer\Add.cshtml" />
+    <Content Include="Views\MissionGroup\Index.cshtml" />
+    <Content Include="Views\MissionGroup\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -391,6 +406,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907142134216_RemovedNameFromMessagesAndRequests.resx">
       <DependentUpon>201907142134216_RemovedNameFromMessagesAndRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907162346460_AddingMissionGroups.resx">
+      <DependentUpon>201907162346460_AddingMissionGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907170117201_AddingCountriesToMissionGroups.resx">
+      <DependentUpon>201907170117201_AddingCountriesToMissionGroups.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

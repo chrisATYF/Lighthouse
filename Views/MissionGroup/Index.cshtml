@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Lighthouse.Models.MissionGroup>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="">
+    <p>This is the mission group index page</p>
+    @if (!Model.Any())
+    {
+        <p>There aren't any groups right now. Start one <a href="@Url.RouteUrl("MissionAdd")">here</a></p>
+    } 
+    else
+    {
+        foreach (var group in Model)
+        {
+            <p>@group.GroupName @group.Country</p>
+            <span>@group.DateCreatedHumanized</span>
+        }
+    }
+</div>

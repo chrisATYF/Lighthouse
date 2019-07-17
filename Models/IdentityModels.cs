@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -18,8 +19,8 @@ namespace Lighthouse.Models
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
         public string DisplayName { get; set; }
+        public ICollection<MissionGroup> MissionGroups { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -31,6 +32,7 @@ namespace Lighthouse.Models
 
         public DbSet<Message> Messages { get; set; }
         public DbSet<PrayerRequest> PrayerRequests { get; set; }
+        public DbSet<MissionGroup> MissionGroups { get; set; }
 
         public static ApplicationDbContext Create()
         {

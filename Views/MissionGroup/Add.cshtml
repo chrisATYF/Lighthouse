@@ -1,0 +1,22 @@
+﻿@model Lighthouse.Models.MissionGroup
+@{
+    ViewBag.Title = "Add";
+}
+
+<h5>Add Mission Groups</h5>
+<form action="@Url.RouteUrl("MissionAddPost")" class="form-group" method="post">
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(n => n.GroupName)
+            @Html.TextBoxFor(n => n.GroupName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(c => c.Country)
+            @Html.EnumDropDownListFor(c => c.Country, "Select Country", new { @class = "form-control"})
+        </div>
+    </div>
+    <button class="btn btn-outline-info" type="submit">Submit</button>
+</form>

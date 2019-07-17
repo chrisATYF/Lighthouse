@@ -1,4 +1,4 @@
-﻿@model Lighthouse.ViewModels.MessagePrayerViewModel
+﻿@model Lighthouse.ViewModels.MessageMissionViewModel
 @{
     ViewBag.Title = "Start";
 }
@@ -15,6 +15,22 @@
             </div>
         </div>
     </form>
+</div>
+<div class="mssnGroups">
+    <a class="btn btn-outline-light" href="@Url.RouteUrl("MissionIndex")">Mission Groups</a>
+    @if (!Model.MissionGroups.Any())
+    {
+        <p>There are no mission groups here yet</p>
+    }
+    <ul>
+        @foreach (var group in Model.MissionGroups)
+        {
+            <li>
+                <p>@group.GroupName</p>
+                <span>@group.DateCreatedHumanized</span>
+            </li>
+        }
+    </ul>
 </div>
 <div class="mssgText">
     <ul class="mssgSect">

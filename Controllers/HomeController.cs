@@ -15,12 +15,12 @@ namespace Lighthouse.Controllers
     public class HomeController : Controller
     {
         protected readonly IMessage _efMessageService;
-        protected readonly IPrayer _efPrayerService;
+        protected readonly IMissionGroup _efMissionService;
 
-        public HomeController(IMessage efMessageService, IPrayer efPrayerService)
+        public HomeController(IMessage efMessageService, IMissionGroup efMissionService)
         {
             _efMessageService = efMessageService;
-            _efPrayerService = efPrayerService;
+            _efMissionService = efMissionService;
         }
 
         [Route("", Name = "HomeIndex")]
@@ -44,8 +44,8 @@ namespace Lighthouse.Controllers
         public async Task<ActionResult> Start()
         {
             var mssgModel = await _efMessageService.GetAllMessageAsync();
-            var prayerModel = await _efPrayerService.GetAllPrayersAsync();
-            var model = new MessagePrayerViewModel { Messages = mssgModel, Prayers = prayerModel };
+            var missionModel = await _efMissionService.GetAllGroupsAsync();
+            var model = new MessageMissionViewModel { Messages = mssgModel, MissionGroups = missionModel };
 
             return View(model);
         }
@@ -55,6 +55,11 @@ namespace Lighthouse.Controllers
         [Route("Start", Name = "HomeStartPost")]
         public async Task<ActionResult> Start(Message model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             var userAspNetId = User.Identity.GetUserId();
             var appUser = await _efMessageService.GetApplicationUserAsync(userAspNetId);
             model.AppUser = appUser;
