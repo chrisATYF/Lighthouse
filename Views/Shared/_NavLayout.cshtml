@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNet.Identity
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+<nav class="navbar navbar-expand-lg sticky-top">
     <a class="navbar-brand" href="@Url.RouteUrl("HomeIndex")">Lighthouse</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -17,6 +17,9 @@
             {
                 <li class="nav-item">
                     <a class="nav-link" href="@Url.RouteUrl("PrayerIndex")">Request Prayer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.RouteUrl("MissionIndex")">Mission Groups</a>
                 </li>
             }
         </ul>

@@ -3,7 +3,6 @@
     ViewBag.Title = "Start";
 }
 
-
 @Html.Partial("_NavLayout")
 <div class="mssgForm">
     <form action="@Url.RouteUrl("HomeStartPost")" method="post">
@@ -16,33 +15,39 @@
         </div>
     </form>
 </div>
-<div class="mssnGroups">
-    <a class="btn btn-outline-light" href="@Url.RouteUrl("MissionIndex")">Mission Groups</a>
-    @if (!Model.MissionGroups.Any())
-    {
-        <p>There are no mission groups here yet</p>
-    }
-    <ul>
-        @foreach (var group in Model.MissionGroups)
-        {
-            <li>
-                <p>@group.GroupName</p>
-                <span>@group.DateCreatedHumanized</span>
-            </li>
-        }
-    </ul>
+<div class="row">
+    <div class="col-md-3">
+        <div class="mssnGroups">
+            @if (!Model.MissionGroups.Any())
+            {
+                <p>There are no mission groups here yet</p>
+            }
+            <ul class="list-group">
+                @foreach (var group in Model.MissionGroups)
+                {
+                    <li class="list-group-item mssg">
+                        <p>@group.GroupName</p>
+                        <span>@group.DateCreatedHumanized</span>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="mssgText">
+            <ul class="mssgSect">
+                @foreach (var message in Model.Messages.OrderByDescending(d => d.DateSubmitted))
+                {
+                    <li class="media pt-2">
+                        <div class="mssg media-body">
+                            <h5 class="mt-0 mb-1">@message.AppUser.DisplayName.ToLower()</h5>
+                            @message.MessageDetails
+                            <small class="d-block">@message.DateSubmittedHumanized</small>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
 </div>
-<div class="mssgText">
-    <ul class="mssgSect">
-        @foreach (var message in Model.Messages.OrderByDescending(d => d.DateSubmitted))
-        {
-            <li class="media pt-2">
-                <div class="mssg media-body">
-                    <h5 class="mt-0 mb-1">@message.AppUser.DisplayName.ToLower()</h5>
-                    @message.MessageDetails
-                    <small class="d-block">@message.DateSubmittedHumanized</small>
-                </div>
-            </li>
-        }
-    </ul>
-</div>
+

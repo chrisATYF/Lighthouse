@@ -19,7 +19,7 @@ html {
 
 .missionImg {
     background-image: url('https://images.pexels.com/photos/722664/pexels-photo-722664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-    min-height: 50%;
+    min-height: 100%;
 }
 
 .hdngImg, .missionImg {
@@ -31,37 +31,39 @@ html {
 }
 
 .hdngSect {
-    background-color: #000000;
-    color: #dedede;
+    color: #fbfbfb;
     border-radius: 10px 10px;
     padding: 65px;
     margin: auto;
     width: 65%;
-    background: rgba(24, 24, 24, 0.8);
+    background: rgba(91, 192, 222, 0.6);
     transform: translate(0, -50%)
 }
 
-.missionSect {
-    text-align: center;
-    padding: 50px 80px;
-    background-color: #efefef;
-    color: #363636;
+.mssnSect {
+    color: #fbfbfb;
+    border-radius: 10px 10px;
+    padding: 65px;
+    margin: auto;
+    width: 100%;
+    background: rgba(91, 192, 222, 0.6);
+    transform: translate(0, -50%)
 }
 
 nav {
-    background-color: rgba(24, 24, 24, 0.8) !important;
-    color: #dedede !important;
+    background-color: rgba(91, 192, 222, 1) !important;
+    color: #fbfbfb !important;
 }
+
 a {
     text-decoration: none !important;
-    color: #dedede !important;
+    color: #fbfbfb !important;
 }
 
 .sText {
     position: absolute;
     top: 50%;
     width: 100%;
-    color: #000000;
     text-align: center;
     font-size: 27px;
     letter-spacing: 6px;
@@ -73,7 +75,7 @@ a {
     -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     border-radius: 10px 10px;
-    padding: 10px;
+    padding: 5px;
     margin: 5px auto 5px auto;
 }
 
@@ -103,17 +105,17 @@ a {
 .mssgTA {
     margin: 10px;
     resize: none;
-    min-height: 85px;
-    min-width: 55%;
-    border-radius: 10px 10px;
+    min-height: 75px;
+    min-width: 50%;
+    border-radius: 7px 7px;
     -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
 }
 
 .ftSect {
-    background-color: rgba(24, 24, 24, 0.8);
-    color: #dedede;
+    background-color: rgba(91, 192, 222, 1);
+    color: #fbfbfb;
     text-align: center;
     bottom: 0;
     padding: 10px;
