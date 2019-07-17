@@ -3,51 +3,45 @@
     ViewBag.Title = "Start";
 }
 
-    @Html.Partial("_NavLayout")
-    <div class="mssgForm">
-        <form action="@Url.RouteUrl("HomeStartPost")" method="post">
-            @Html.AntiForgeryToken()
-            <textarea class="mssgTA text-center" name="MessageDetails" placeholder="Enter text here to post"></textarea>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <button class="btn btn-outline-info mssgSubmitBtn" type="submit">Post</button>
+@Html.Partial("_NavLayout")
+<div class="messageForm">
+    <form action="@Url.RouteUrl("HomeStartPost")" method="post">
+        @Html.AntiForgeryToken()
+        <textarea class="messageTA" name="MessageDetails" placeholder="Enter text here to post"></textarea>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-outline-info mssgSubmitBtn" type="submit">Post</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="missionGroupSect">
+    @if (!Model.MissionGroups.Any())
+    {
+        <p>There are no mission groups here yet</p>
+    }
+    <ul class="list-group">
+        @foreach (var group in Model.MissionGroups)
+        {
+            <li class="list-group-item">
+                <p><a href="@Url.RouteUrl("MissionGroup", new { groupId = group.Id })">@group.GroupName</a></p>
+                <span>@group.DateCreatedHumanized</span>
+            </li>
+        }
+    </ul>
+</div>
+<div class="messageText">
+    <ul class="messageSect">
+        @foreach (var message in Model.Messages.OrderByDescending(d => d.DateSubmitted))
+        {
+            <li class="message media pt-2">
+                <div class=" media-body">
+                    <h5 class="mt-0 mb-1">@message.AppUser.DisplayName.ToLower()</h5>
+                    @message.MessageDetails
+                    <small class="d-block">@message.DateSubmittedHumanized</small>
                 </div>
-            </div>
-        </form>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="mssnGroups">
-                @if (!Model.MissionGroups.Any())
-                {
-                    <p>There are no mission groups here yet</p>
-                }
-                <ul class="list-group">
-                    @foreach (var group in Model.MissionGroups)
-                    {
-                        <li class="list-group-item mssg">
-                            <p><a href="@Url.RouteUrl("MissionGroup", new { groupId = group.Id })">@group.GroupName</a></p>
-                            <span>@group.DateCreatedHumanized</span>
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-9">
-            <div class="mssgText">
-                <ul class="mssgSect">
-                    @foreach (var message in Model.Messages.OrderByDescending(d => d.DateSubmitted))
-                    {
-                        <li class="media pt-2">
-                            <div class="mssg media-body">
-                                <h5 class="mt-0 mb-1">@message.AppUser.DisplayName.ToLower()</h5>
-                                @message.MessageDetails
-                                <small class="d-block">@message.DateSubmittedHumanized</small>
-                            </div>
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>
-    </div>
+            </li>
+        }
+    </ul>
+</div>
 

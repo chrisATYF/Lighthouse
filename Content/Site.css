@@ -1,4 +1,8 @@
-﻿body, html {
+﻿/*
+    Main components
+*/
+
+body, html {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -40,7 +44,7 @@ html {
     transform: translate(0, -50%)
 }
 
-.mssnSect {
+.missionSect {
     color: #fbfbfb;
     border-radius: 10px 10px;
     padding: 65px;
@@ -58,7 +62,7 @@ nav {
 a {
     text-decoration: none !important;
     color: #3e3e3e !important;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 .sText {
@@ -71,39 +75,38 @@ a {
     text-transform: uppercase;
 }
 
-.mssg {
+.message {
     -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     border-radius: 10px 10px;
     padding: 5px;
-    margin: 5px auto 5px auto;
+    margin: 5px auto 10px 30px;
+    min-width: 20%;
+    max-width: 65%;
 }
 
-.mssgText {
+.messageText {
     width: 70%;
-    margin: 5px auto 5px auto;
     text-align: center;
     font-size: 15px;
 }
 
-.mssgSect {
+.messageSect {
     list-style-type: none;
-    text-align: center;
-    padding: 40px;
 }
 
-.mssgForm {
+.messageForm {
     text-align: center;
 }
 
-.mssgSubmitBtn {
+.messageSubmitBtn {
     -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
 }
 
-.mssgTA {
+.messageTA {
     margin: 10px;
     resize: none;
     min-height: 75px;
