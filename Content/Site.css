@@ -1,7 +1,6 @@
 ﻿/*
     Main components
 */
-
 body, html {
     height: 100%;
     margin: 0;
@@ -16,6 +15,32 @@ html {
     overflow-x: hidden;
 }
 
+.ftSect {
+    background-color: rgba(91, 192, 222, 1);
+    color: #fbfbfb;
+    text-align: center;
+    bottom: 0;
+    padding: 10px;
+}
+
+input, select, textarea {
+    max-width: 500px;
+}
+
+nav {
+    background-color: rgba(91, 192, 222, 1) !important;
+    color: #fbfbfb !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: #3e3e3e !important;
+    cursor: pointer;
+}
+
+/*
+    Page Images
+*/
 .hdngImg {
     background-image: url('https://images.pexels.com/photos/1694363/pexels-photo-1694363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
     min-height: 100%;
@@ -34,6 +59,9 @@ html {
     opacity: 0.80;
 }
 
+/*
+    Landing Page Section
+*/
 .hdngSect {
     color: #fbfbfb;
     border-radius: 10px 10px;
@@ -44,6 +72,9 @@ html {
     transform: translate(0, -50%)
 }
 
+/*
+    Mission Statement Page
+*/
 .missionSect {
     color: #fbfbfb;
     border-radius: 10px 10px;
@@ -54,17 +85,9 @@ html {
     transform: translate(0, -50%)
 }
 
-nav {
-    background-color: rgba(91, 192, 222, 1) !important;
-    color: #fbfbfb !important;
-}
-
-a {
-    text-decoration: none !important;
-    color: #3e3e3e !important;
-    cursor: pointer; 
-}
-
+/*
+    Site Text
+*/
 .sText {
     position: absolute;
     top: 50%;
@@ -75,21 +98,23 @@ a {
     text-transform: uppercase;
 }
 
+/*
+    Messages
+*/
 .message {
     -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
     border-radius: 10px 10px;
     padding: 5px;
-    margin: 5px auto 10px 30px;
-    min-width: 20%;
-    max-width: 65%;
+    margin-top: 15px;
+    margin-left: 30px;
 }
 
 .messageText {
-    width: 70%;
     text-align: center;
     font-size: 15px;
+    max-width: 60%;
 }
 
 .messageSect {
@@ -117,20 +142,42 @@ a {
     box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
 }
 
-.ftSect {
-    background-color: rgba(91, 192, 222, 1);
-    color: #fbfbfb;
+/*
+    Mission Groups
+*/
+.missionGroupSect {
+    float: right;
+    min-width: 25%;
+    margin-top: 15px;
+    margin-right: 30px;
+    border-radius: 10px 10px;
+    -webkit-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    -moz-box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+    box-shadow: 8px 4px 22px -9px rgba(0,0,0,0.73);
+}
+
+.missionGroupList {
+    list-style-type: none;
+    min-height: 300px;
+    width: 45%;
+}
+
+.missionGroupListItem {
+
+}
+
+/*
+    Prayer Requests
+*/
+.prayerSect {
+    list-style-type: none;
     text-align: center;
-    bottom: 0;
-    padding: 10px;
+    padding: 40px;
 }
 
-input,
-select,
-textarea {
-    max-width: 500px;
-}
-
+/*
+    Login and Register Pages
+*/
 .loginHeading {
     padding: 50px 0 20px 30px;
     text-align: center;
@@ -154,12 +201,9 @@ textarea {
     padding: 10px;
 }
 
-.prayerSect {
-    list-style-type: none;
-    text-align: center;
-    padding: 40px;
-}
-
+/*
+    Mobile Design
+*/
 @media (max-width: 537px) {
     body {
         overflow-x: hidden;

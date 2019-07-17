@@ -10,7 +10,7 @@
         <textarea class="messageTA" name="MessageDetails" placeholder="Enter text here to post"></textarea>
         <div class="row">
             <div class="col-md-12 text-center">
-                <button class="btn btn-outline-info mssgSubmitBtn" type="submit">Post</button>
+                <button class="btn btn-outline-info messageSubmitBtn" type="submit">Post</button>
             </div>
         </div>
     </form>
@@ -20,10 +20,10 @@
     {
         <p>There are no mission groups here yet</p>
     }
-    <ul class="list-group">
+    <ul class="missionGroupList">
         @foreach (var group in Model.MissionGroups)
         {
-            <li class="list-group-item">
+            <li class="missionGroupListItem">
                 <p><a href="@Url.RouteUrl("MissionGroup", new { groupId = group.Id })">@group.GroupName</a></p>
                 <span>@group.DateCreatedHumanized</span>
             </li>
