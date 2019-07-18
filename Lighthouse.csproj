@@ -367,6 +367,7 @@
     <Content Include="Views\MissionGroup\Index.cshtml" />
     <Content Include="Views\MissionGroup\Add.cshtml" />
     <Content Include="Views\MissionGroup\Group.cshtml" />
+    <Content Include="Views\MissionGroup\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

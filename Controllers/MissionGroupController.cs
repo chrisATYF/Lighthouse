@@ -27,10 +27,10 @@ namespace Lighthouse.Controllers
             return View(model);
         }
 
-        [Route("Group/{groupId}", Name = "MissionGroup")]
-        public async Task<ActionResult> Group(int groupId)
+        [Route("Group/{modelId}", Name = "MissionGroup")]
+        public async Task<ActionResult> Group(int modelId)
         {
-            var model = await _efMissionService.GetGroupAsync(groupId);
+            var model = await _efMissionService.GetGroupAsync(modelId);
 
             return View(model);
         }
@@ -54,6 +54,29 @@ namespace Lighthouse.Controllers
             await _efMissionService.AddGroupAsync(model);
 
             return RedirectToRoute("MissionIndex");
+        }
+
+        [Route("Edit/{modelId}", Name = "MissionEdit")]
+        public async Task<ActionResult> Edit(int modelId)
+        {
+            var model = await _efMissionService.GetGroupAsync(modelId);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("Edit", Name = "MissionEditPost")]
+        public async Task<ActionResult> Edit(MissionGroup model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            await _efMissionService.EditGroupAsync(model);
+
+            return RedirectToRoute("MissionGroup", new { modelId = model.Id });
         }
     }
 }

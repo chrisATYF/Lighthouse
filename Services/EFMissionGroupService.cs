@@ -36,5 +36,22 @@ namespace Lighthouse.Services
 
             return model;
         }
+
+        public async Task<MissionGroup> EditGroupAsync(MissionGroup model)
+        {
+            var modelEdit = await _context.MissionGroups.FirstOrDefaultAsync(i => i.Id == model.Id);
+            modelEdit.GroupName = model.GroupName;
+            modelEdit.Country = model.Country;
+
+            await _context.SaveChangesAsync();
+
+            return model;
+        }
+
+        public async Task DeleteGroupAsync(MissionGroup model)
+        {
+            _context.MissionGroups.Remove(model);
+            await _context.SaveChangesAsync();
+        }
     }
 }

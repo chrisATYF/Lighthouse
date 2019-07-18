@@ -12,5 +12,7 @@ namespace Lighthouse.Services.Interfaces
         Task<List<MissionGroup>> GetAllGroupsAsync();
         Task<MissionGroup> GetGroupAsync(int modelId);
         Task<MissionGroup> AddGroupAsync(MissionGroup model);
+        Task<MissionGroup> EditGroupAsync(MissionGroup model);
+        Task DeleteGroupAsync(MissionGroup model);
     }
 }
