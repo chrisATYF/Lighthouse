@@ -1,11 +1,11 @@
 ﻿@model Lighthouse.Models.MissionGroup
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Delete";
 }
 
 <div class="">
-    <p>Mission group edit</p>
-    <form action="@Url.RouteUrl("MissionEditPost")" method="post">
+    <p>Mission delete</p>
+    <form action="@Url.RouteUrl("MissionDeletePost")" method="post">
         @Html.HiddenFor(i => i.Id)
         @Html.AntiForgeryToken()
     </form>

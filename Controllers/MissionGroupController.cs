@@ -78,5 +78,28 @@ namespace Lighthouse.Controllers
 
             return RedirectToRoute("MissionGroup", new { modelId = model.Id });
         }
+
+        [Route("Delete/{modelId}", Name = "MissionDelete")]
+        public async Task<ActionResult> Delete(int modelId)
+        {
+            var model = await _efMissionService.GetGroupAsync(modelId);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("Delete", Name = "MissionDeletePost")]
+        public async Task<ActionResult> Delete(MissionGroup model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            await _efMissionService.DeleteGroupAsync(model);
+
+            return RedirectToRoute("MissionIndex");
+        }
     }
 }

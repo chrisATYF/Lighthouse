@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201907170117201_AddingCountriesToMissionGroups.Designer.cs">
       <DependentUpon>201907170117201_AddingCountriesToMissionGroups.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907180045472_AddingCreatingUserToMissionGroup.cs" />
+    <Compile Include="Migrations\201907180045472_AddingCreatingUserToMissionGroup.Designer.cs">
+      <DependentUpon>201907180045472_AddingCreatingUserToMissionGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\MissionGroup.cs" />
@@ -368,6 +372,7 @@
     <Content Include="Views\MissionGroup\Add.cshtml" />
     <Content Include="Views\MissionGroup\Group.cshtml" />
     <Content Include="Views\MissionGroup\Edit.cshtml" />
+    <Content Include="Views\MissionGroup\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -414,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907170117201_AddingCountriesToMissionGroups.resx">
       <DependentUpon>201907170117201_AddingCountriesToMissionGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907180045472_AddingCreatingUserToMissionGroup.resx">
+      <DependentUpon>201907180045472_AddingCreatingUserToMissionGroup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

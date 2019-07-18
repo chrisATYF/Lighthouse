@@ -12,6 +12,7 @@ namespace Lighthouse.Models
     {
         public int Id { get; set; }
         public string GroupName { get; set; }
+        public ApplicationUser GroupCreator { get; set; }
         public DateTime DateCreated { get; set; }
         public ICollection<Message> Messages { get; set; }
         public ICollection<ApplicationUser> Users { get; set; }
