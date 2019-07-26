@@ -28,7 +28,13 @@ namespace Lighthouse.Controllers
             return View(model);
         }
 
-        [Route("", Name = "")]
+        [Route("Request/{modelId}", Name = "PrayerRequest")]
+        public async Task<ActionResult> Request(int modelId)
+        {
+            var model = await _efPrayerService.GetPrayerAsync(modelId);
+
+            return View(model);
+        }
 
         [Route("Add", Name = "PrayerAddPrayer")]
         public ActionResult Add()
@@ -70,7 +76,7 @@ namespace Lighthouse.Controllers
         {
             await _efPrayerService.EditPrayerAsync(model);
 
-            return RedirectToRoute("");
+            return RedirectToRoute("PrayerRequest", new { modelId = model.Id });
         }
     }
 }
