@@ -28,6 +28,8 @@ namespace Lighthouse.Controllers
             return View(model);
         }
 
+        [Route("", Name = "")]
+
         [Route("Add", Name = "PrayerAddPrayer")]
         public ActionResult Add()
         {
@@ -51,6 +53,24 @@ namespace Lighthouse.Controllers
             await _efPrayerService.AddPrayersAsync(model);
 
             return RedirectToRoute("PrayerIndex");
+        }
+
+        [Route("Edit/{modelId}", Name = "PrayerEdit")]
+        public async Task<ActionResult> Edit(int modelId)
+        {
+            var model = await _efPrayerService.GetPrayerAsync(modelId);
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("Edit", Name = "PrayerEditPost")]
+        public async Task<ActionResult> Edit(PrayerRequest model)
+        {
+            await _efPrayerService.EditPrayerAsync(model);
+
+            return RedirectToRoute("");
         }
     }
 }

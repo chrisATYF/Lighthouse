@@ -373,6 +373,7 @@
     <Content Include="Views\MissionGroup\Group.cshtml" />
     <Content Include="Views\MissionGroup\Edit.cshtml" />
     <Content Include="Views\MissionGroup\Delete.cshtml" />
+    <Content Include="Views\Prayer\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
