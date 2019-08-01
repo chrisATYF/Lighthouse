@@ -28,8 +28,8 @@ namespace Lighthouse.Controllers
             return View(model);
         }
 
-        [Route("Request/{modelId}", Name = "PrayerRequest")]
-        public async Task<ActionResult> Request(int modelId)
+        [Route("Prayer/{modelId}", Name = "PrayerRequest")]
+        public async Task<ActionResult> Prayer(int modelId)
         {
             var model = await _efPrayerService.GetPrayerAsync(modelId);
 
@@ -66,7 +66,7 @@ namespace Lighthouse.Controllers
         {
             var model = await _efPrayerService.GetPrayerAsync(modelId);
 
-            return View();
+            return View(model);
         }
 
         [HttpPost]
@@ -77,6 +77,24 @@ namespace Lighthouse.Controllers
             await _efPrayerService.EditPrayerAsync(model);
 
             return RedirectToRoute("PrayerRequest", new { modelId = model.Id });
+        }
+
+        [Route("Delete/{modelId}", Name = "PrayerDelete")]
+        public async Task<ActionResult> Delete(int modelId)
+        {
+            var model = await _efPrayerService.GetPrayerAsync(modelId);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("Delete", Name = "PrayerDeletePost")]
+        public async Task<ActionResult> Delete(PrayerRequest model)
+        {
+            await _efPrayerService.DeletePrayerAsync(model);
+
+            return RedirectToRoute("PrayerIndex");
         }
     }
 }
