@@ -28,8 +28,8 @@ namespace Lighthouse.Controllers
             return View(model);
         }
 
-        [Route("Prayer/{modelId}", Name = "PrayerRequest")]
-        public async Task<ActionResult> Prayer(int modelId)
+        [Route("SingleRequest/{modelId}", Name = "PrayerSingleRequest")]
+        public async Task<ActionResult> SingleRequest(int modelId)
         {
             var model = await _efPrayerService.GetPrayerAsync(modelId);
 
