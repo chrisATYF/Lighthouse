@@ -32,7 +32,7 @@ namespace Lighthouse.Controllers
         public async Task<ActionResult> SingleRequest(int modelId)
         {
             var model = await _efPrayerService.GetPrayerAsync(modelId);
-
+            
             return View(model);
         }
 
