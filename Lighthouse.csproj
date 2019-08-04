@@ -253,16 +253,26 @@
     <Compile Include="Migrations\201907180045472_AddingCreatingUserToMissionGroup.Designer.cs">
       <DependentUpon>201907180045472_AddingCreatingUserToMissionGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908041944264_AddingUploadFileAndUserProfile.cs" />
+    <Compile Include="Migrations\201908041944264_AddingUploadFileAndUserProfile.Designer.cs">
+      <DependentUpon>201908041944264_AddingUploadFileAndUserProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\MissionGroup.cs" />
     <Compile Include="Models\PrayerRequest.cs" />
+    <Compile Include="Models\UploadFile.cs" />
+    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Services\EFMessageService.cs" />
     <Compile Include="Services\EFMissionGroupService.cs" />
     <Compile Include="Services\EFPrayerService.cs" />
+    <Compile Include="Services\EFProfileService.cs" />
+    <Compile Include="Services\EFUploadFile.cs" />
     <Compile Include="Services\Interfaces\IMessage.cs" />
     <Compile Include="Services\Interfaces\IMissionGroup.cs" />
     <Compile Include="Services\Interfaces\IPrayer.cs" />
+    <Compile Include="Services\Interfaces\IProfile.cs" />
+    <Compile Include="Services\Interfaces\IUploadFile.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
@@ -427,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907180045472_AddingCreatingUserToMissionGroup.resx">
       <DependentUpon>201907180045472_AddingCreatingUserToMissionGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908041944264_AddingUploadFileAndUserProfile.resx">
+      <DependentUpon>201908041944264_AddingUploadFileAndUserProfile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
