@@ -61,7 +61,8 @@ namespace Lighthouse
                 .RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new PerRequestLifetimeManager())
                 .RegisterType<IMessage, EFMessageService>()
                 .RegisterType<IPrayer, EFPrayerService>()
-                .RegisterType<IMissionGroup, EFMissionGroupService>(); 
+                .RegisterType<IMissionGroup, EFMissionGroupService>()
+                .RegisterType<IProfile, EFProfileService>(); 
         }
     }
 }

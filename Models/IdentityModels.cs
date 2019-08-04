@@ -33,6 +33,8 @@ namespace Lighthouse.Models
         public DbSet<Message> Messages { get; set; }
         public DbSet<PrayerRequest> PrayerRequests { get; set; }
         public DbSet<MissionGroup> MissionGroups { get; set; }
+        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<UploadFile> UploadFiles { get; set; }
 
         public static ApplicationDbContext Create()
         {
