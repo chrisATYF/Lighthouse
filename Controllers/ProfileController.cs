@@ -28,15 +28,17 @@ namespace Lighthouse.Controllers
         [Route("SingleProfile/{modelId}", Name = "ProfileSingleProfile")]
         public async Task<ActionResult> SingleProfile(int modelId)
         {
+            var model = await _efProfileService.GetUserProfile(modelId);
 
-
-            return View();
+            return View(model);
         }
 
         [Route("Add", Name = "ProfileAdd")]
-        public async Task<ActionResult> Add()
+        public ActionResult Add()
         {
-            return View();
+            var model = new UserProfile();
+
+            return View(model);
         }
 
         [HttpPost]
@@ -44,6 +46,8 @@ namespace Lighthouse.Controllers
         [Route("Add", Name = "ProfileAddPost")]
         public async Task<ActionResult> Add(UserProfile model)
         {
+            await _efProfileService.AddUserProfile(model);
+
             return RedirectToRoute("ProfileSingleProfile", new { modelId = model.Id });
         }
     }

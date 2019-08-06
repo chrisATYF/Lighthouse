@@ -1,0 +1,15 @@
+﻿@model Lighthouse.Models.UserProfile
+@{
+    ViewBag.Title = "Add";
+}
+
+<div class="">
+    <form action="@Url.RouteUrl("ProfileAddPost")" method="post" class="form-group">
+        @Html.AntiForgeryToken();
+        @Html.HiddenFor(i => i.Id)
+        <div class="">
+            @Html.LabelFor(u => u.UserPhoto)
+            <input type="file" placeholder="Upload a display photo" name="UserPhoto" />
+        </div>
+    </form>
+</div>

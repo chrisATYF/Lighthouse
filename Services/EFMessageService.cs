@@ -45,6 +45,8 @@ namespace Lighthouse.Services
             modelEdit.DateSubmitted = model.DateSubmitted;
             modelEdit.MessageDetails = model.MessageDetails;
 
+            await _context.SaveChangesAsync();
+
             return modelEdit;
         }
 

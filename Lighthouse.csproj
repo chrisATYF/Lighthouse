@@ -257,6 +257,10 @@
     <Compile Include="Migrations\201908041944264_AddingUploadFileAndUserProfile.Designer.cs">
       <DependentUpon>201908041944264_AddingUploadFileAndUserProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908060228222_UpdatingUserPhotos.cs" />
+    <Compile Include="Migrations\201908060228222_UpdatingUserPhotos.Designer.cs">
+      <DependentUpon>201908060228222_UpdatingUserPhotos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\MissionGroup.cs" />
@@ -388,6 +392,7 @@
     <Content Include="Views\Prayer\Delete.cshtml" />
     <Content Include="Views\Prayer\SingleRequest.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Profile\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -440,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908041944264_AddingUploadFileAndUserProfile.resx">
       <DependentUpon>201908041944264_AddingUploadFileAndUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908060228222_UpdatingUserPhotos.resx">
+      <DependentUpon>201908060228222_UpdatingUserPhotos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
