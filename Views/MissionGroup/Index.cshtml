@@ -12,9 +12,12 @@
     } 
     else
     {
+        <p><a href="@Url.RouteUrl("MissionAdd")">Add Group</a></p>
+
         foreach (var group in Model)
         {
-            <a href="@Url.RouteUrl("MissionGroup", new { groupId = group.Id })">@group.GroupName</a><p>@group.Country</p>
+            <p><a href="@Url.RouteUrl("MissionGroup", new { groupId = group.Id })">@group.GroupName</a></p>
+            <p>@group.Country</p>
             <span>@group.DateCreatedHumanized</span>
         }
     }
